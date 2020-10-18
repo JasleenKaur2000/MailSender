@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JMAIL</title>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script type="text/javascript">
+		function sendEmail(){
+			var uservalue = document.getElementById("mailSubject").value
+			var passvalue = document.getElementById("mailBody").value
+	Email.send({
+	Host : "smtp.gmail.com",
+    Username : "Username",
+    Password : "**********",
+    To : 'mail to recieve',
+    From : "mail to send",
+    Subject : uservalue,
+    Body : passvalue
+}).then(function(message){
+	alert("message sent successfully")
+}
+);
+}
+	</script>
+
+</head>
+<body>
+<table>
+	<tr>
+		<td>Subject:</td>
+		<td><input type="text" id="mailSubject"></td>
+	</tr>
+	<tr>
+		<td>Body:</td>
+		<td><input type="text" id="mailBody"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="button" onclick="sendEmail();" value="SEND" ></td>
+	</tr>
+</table>	
+
+
+</body>
+</html>
